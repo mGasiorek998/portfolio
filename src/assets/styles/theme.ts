@@ -17,6 +17,11 @@ const theme: DefaultTheme = {
     xs: '2rem',
     xxs: '1rem',
   },
+  devices: {
+    mobile: '(min-width: 576px)',
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 1200px)',
+  },
 };
 
 export default theme;
