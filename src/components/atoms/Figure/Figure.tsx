@@ -1,3 +1,4 @@
+import React from 'react';
 import { FigureEnum } from 'assets/shared/enums';
 import { StyledSVG } from './Figure.styles';
 
@@ -10,16 +11,18 @@ interface FigureProps {
   figure: FigureEnum;
 }
 
-const Figure = ({ height, width, cx, cy, r, figure }: FigureProps) => {
-  return (
-    <StyledSVG height={height} width={width}>
-      {figure === FigureEnum.Circle ? (
-        <circle cx={cx} cy={cy} r={r} />
-      ) : (
-        <rect height={height} width={width} />
-      )}
-    </StyledSVG>
-  );
-};
+const Figure = React.forwardRef<SVGSVGElement, FigureProps>(
+  ({ height, width, cx, cy, r, figure }, ref) => {
+    return (
+      <StyledSVG height={height} width={width} ref={ref}>
+        {figure === FigureEnum.Circle ? (
+          <circle cx={cx} cy={cy} r={r} />
+        ) : (
+          <rect height={height} width={width} />
+        )}
+      </StyledSVG>
+    );
+  }
+);
 
 export default Figure;

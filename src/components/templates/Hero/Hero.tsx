@@ -1,3 +1,5 @@
+import { useRef, useEffect } from 'react';
+import gsap, { Expo } from 'gsap';
 import { FigureEnum } from 'assets/shared/enums';
 import {
   BackgroundContainer,
@@ -5,35 +7,29 @@ import {
   ForegroundContainer,
 } from 'assets/styles/styles';
 import Figure from 'components/atoms/Figure/Figure';
-import styled from 'styled-components';
-
-const StyledHeader = styled.header`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  h1 {
-    font-size: ${({ theme }) => theme.fontSize.xxl};
-    font-family: 'Cardo';
-    line-height: 100%;
-    font-weight: lighter;
-  }
-
-  h3 {
-    font-size: ${({ theme }) => theme.fontSize.s};
-  }
-`;
-
-const BlueText = styled.span`
-  color: ${({ theme }) => theme.colors.blue};
-  font-family: 'Cardo';
-`;
+import Header from 'components/organisms/Header/Header';
 
 const Hero = () => {
+  const figureRef = useRef<SVGSVGElement | null>(null);
+  const tl = useRef<GSAPTimeline | null>(null);
+
+  useEffect(() => {
+    tl.current = gsap.timeline();
+
+    if (!tl.current) return;
+
+    tl.current.from(figureRef.current, {
+      x: '-100%',
+      duration: 2.5,
+      delay: 4,
+      ease: Expo.easeOut,
+    });
+  }, []);
   return (
     <StyledSection>
       <BackgroundContainer>
         <Figure
+          ref={figureRef}
           height="100vh"
           width="100vw"
           cx="0"
@@ -43,14 +39,7 @@ const Hero = () => {
         />
       </BackgroundContainer>
       <ForegroundContainer>
-        <StyledHeader>
-          <h3>MICHAL GASIOREK</h3>
-          <h1>
-            <BlueText>FRONT</BlueText>-END
-            <br />
-            <BlueText>DEV</BlueText>ELOPER
-          </h1>
-        </StyledHeader>
+        <Header />
       </ForegroundContainer>
     </StyledSection>
   );
