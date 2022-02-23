@@ -8,6 +8,7 @@ import {
 } from 'assets/styles/styles';
 import Figure from 'components/atoms/Figure/Figure';
 import Header from 'components/organisms/Header/Header';
+import Link from 'components/atoms/Link/Link';
 
 const Hero = () => {
   const figureRef = useRef<SVGSVGElement | null>(null);
@@ -39,6 +40,9 @@ const Hero = () => {
         />
       </BackgroundContainer>
       <ForegroundContainer>
+        <Link href="https://github.com" target="_blank">
+          github
+        </Link>
         <Header />
       </ForegroundContainer>
     </StyledSection>

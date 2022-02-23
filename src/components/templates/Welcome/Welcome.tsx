@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import gsap, { Expo } from 'gsap';
-import { TextContainerCentered } from 'assets/styles/styles';
+import { AriaDescription, TextContainerCentered } from 'assets/styles/styles';
 import { StyledWelcomeSection, WelcomeHeading } from './Welcome.styles';
 
 const str = 'welcome.';
@@ -45,14 +45,19 @@ const Welcome = () => {
   return (
     <StyledWelcomeSection ref={curtainRef}>
       <TextContainerCentered>
-        <WelcomeHeading ref={welcomeHeadingRef}>
+        <WelcomeHeading ref={welcomeHeadingRef} aria-labelledby="welcome">
           {Array.from(str).map((letter, i) => (
-            <span style={{ display: 'inline-block' }} key={i}>
+            <span
+              aria-hidden="true"
+              style={{ display: 'inline-block' }}
+              key={i}
+            >
               {letter}
             </span>
           ))}
         </WelcomeHeading>
       </TextContainerCentered>
+      <AriaDescription id="welcome">Welcome</AriaDescription>
     </StyledWelcomeSection>
   );
 };

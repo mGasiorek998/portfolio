@@ -14,7 +14,7 @@ interface FigureProps {
 const Figure = React.forwardRef<SVGSVGElement, FigureProps>(
   ({ height, width, cx, cy, r, figure }, ref) => {
     return (
-      <StyledSVG height={height} width={width} ref={ref}>
+      <StyledSVG height={height} width={width} ref={ref} aria-hidden="true">
         {figure === FigureEnum.Circle ? (
           <circle cx={cx} cy={cy} r={r} />
         ) : (

@@ -48,3 +48,8 @@ export const TextContainerCentered = styled(TextContainer)`
   left: 50%;
   transform: translate(-50%, -50%);
 `;
+
+export const AriaDescription = styled.p`
+  visibility: hidden;
+  opacity: 0;
+`;
