@@ -20,7 +20,7 @@ const theme: DefaultTheme = {
   devices: {
     mobile: '(min-width: 576px)',
     tablet: '(min-width: 768px)',
-    desktop: '(min-width: 1200px)',
+    desktop: '(min-width: 1400px)',
   },
 };
 

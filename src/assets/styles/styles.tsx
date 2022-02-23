@@ -9,7 +9,7 @@ export const BackgroundContainer = styled.div`
   bottom: 0;
   z-index: -1;
 
-  @media ${({ theme }) => theme.devices.tablet} {
+  @media ${({ theme }) => theme.devices.desktop} {
     margin: -32px -32px 0;
   }
 `;
@@ -17,7 +17,7 @@ export const BackgroundContainer = styled.div`
 export const ForegroundContainer = styled.div`
   margin: 8px 8px 0;
 
-  @media ${({ theme }) => theme.devices.tablet} {
+  @media ${({ theme }) => theme.devices.desktop} {
     margin: 32px 32px 0;
   }
 `;
@@ -52,4 +52,5 @@ export const TextContainerCentered = styled(TextContainer)`
 export const AriaDescription = styled.p`
   visibility: hidden;
   opacity: 0;
+  font-size: 0;
 `;

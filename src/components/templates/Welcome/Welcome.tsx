@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react';
-import styled from 'styled-components';
 import gsap, { Expo } from 'gsap';
 import { AriaDescription, TextContainerCentered } from 'assets/styles/styles';
 import { StyledWelcomeSection, WelcomeHeading } from './Welcome.styles';

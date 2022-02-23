@@ -5,10 +5,12 @@ import {
   BackgroundContainer,
   StyledSection,
   ForegroundContainer,
+  TextContainerCentered,
 } from 'assets/styles/styles';
 import Figure from 'components/atoms/Figure/Figure';
 import Header from 'components/organisms/Header/Header';
-import Link from 'components/atoms/Link/Link';
+import Menu from 'components/molecules/Menu/Menu';
+import { StyledParagraph } from './Hero.styles';
 
 const Hero = () => {
   const figureRef = useRef<SVGSVGElement | null>(null);
@@ -40,11 +42,10 @@ const Hero = () => {
         />
       </BackgroundContainer>
       <ForegroundContainer>
-        <Link href="https://github.com" target="_blank">
-          github
-        </Link>
+        <Menu />
         <Header />
       </ForegroundContainer>
+      <StyledParagraph>minimalist with an eye for the details.</StyledParagraph>
     </StyledSection>
   );
 };
