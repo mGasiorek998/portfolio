@@ -14,7 +14,7 @@ export const WelcomeHeading = styled.h3`
 `;
 
 export const StyledWelcomeSection = styled(StyledSection)`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;

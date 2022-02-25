@@ -6,8 +6,8 @@ export const BackgroundContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
   z-index: -1;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.devices.desktop} {
     margin: -32px -32px 0;
@@ -24,7 +24,8 @@ export const ForegroundContainer = styled.div`
 
 export const StyledSection = styled.section`
   position: relative;
-  height: calc(100vh - 32px);
+  min-height: calc(100vh - 32px);
+  margin-bottom: 244px;
 `;
 
 interface FontFamilyProp {

@@ -3,6 +3,7 @@ import GlobalStyle from 'assets/styles/GlobalStyle';
 import theme from 'assets/styles/theme';
 import Hero from 'components/templates/Hero/Hero';
 import Welcome from 'components/templates/Welcome/Welcome';
+import About from 'components/templates/About/About';
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <GlobalStyle />
       <Welcome />
       <Hero />
+      <About />
     </ThemeProvider>
   );
 };
