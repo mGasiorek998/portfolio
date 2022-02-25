@@ -5,7 +5,6 @@ import {
   BackgroundContainer,
   StyledSection,
   ForegroundContainer,
-  TextContainerCentered,
 } from 'assets/styles/styles';
 import Figure from 'components/atoms/Figure/Figure';
 import Header from 'components/organisms/Header/Header';
@@ -44,8 +43,10 @@ const Hero = () => {
       <ForegroundContainer>
         <Menu />
         <Header />
+        <StyledParagraph>
+          minimalist with an eye for the details.
+        </StyledParagraph>
       </ForegroundContainer>
-      <StyledParagraph>minimalist with an eye for the details.</StyledParagraph>
     </StyledSection>
   );
 };
